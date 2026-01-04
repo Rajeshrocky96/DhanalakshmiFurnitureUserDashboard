@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 214 33% 97%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 214 91% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 91% 20%;
+
+    --secondary: 213 27% 95%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 214 91% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 29% 91%;
+    --input: 220 13% 91%;
+    --ring: 214 91% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(214 91% 25%) 0%, hsl(214 91% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsla(222 47% 11% / 0.7) 100%);
+
+    --shadow-card: 0 4px 20px -4px hsla(222 47% 11% / 0.08);
+    --shadow-card-hover: 0 12px 32px -8px hsla(222 47% 11% / 0.15);
+    --shadow-elevated: 0 20px 40px -12px hsla(222 47% 11% / 0.2);
+    --shadow-glow: 0 0 40px hsla(214 91% 25% / 0.15);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 224 64% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .card-product {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-product:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(var(--primary-hover));
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-transparent;
+  }
+
+  .btn-outline:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .category-circle {
+    @apply w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden transition-all duration-300 cursor-pointer;
+    box-shadow: var(--shadow-card);
+  }
+
+  .category-circle:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: scale(1.05);
+  }
+
+  .compare-bar {
+    @apply fixed bottom-0 left-0 right-0 z-50 py-4 transition-all duration-300;
+    background: hsla(222, 47%, 11%, 0.9);
+    backdrop-filter: blur(12px);
+  }
+
+  .breadcrumb-link {
+    @apply text-muted-foreground hover:text-primary transition-colors duration-200;
+  }
+
+  .breadcrumb-current {
+    @apply text-foreground font-medium;
+  }
+
+  .quick-view-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+    background: hsla(222, 47%, 11%, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .filter-section {
+    @apply bg-card p-4 rounded-xl border border-border;
+  }
+
+  .product-thumbnail {
+    @apply w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden cursor-pointer border-2 border-transparent transition-all duration-200;
+  }
+
+  .product-thumbnail:hover,
+  .product-thumbnail.active {
+    @apply border-primary;
+  }
+
+  .icon-button {
+    @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200;
+    background: hsla(0, 0%, 100%, 0.9);
+    backdrop-filter: blur(8px);
+  }
+
+  .icon-button:hover {
+    @apply bg-primary text-primary-foreground;
+    transform: scale(1.1);
+  }
+
+  .hero-slide {
+    @apply relative w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0;
+    background: var(--gradient-overlay);
+  }
+
+  .offer-banner {
+    @apply relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .offer-banner:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: scale(1.02);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
