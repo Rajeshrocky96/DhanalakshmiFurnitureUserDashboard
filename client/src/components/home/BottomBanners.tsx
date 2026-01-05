@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { fetchBanners } from "@/services/api";
 import { Banner } from "@/types/api";
 import { useBannerNavigation } from "@/hooks/useBannerNavigation";

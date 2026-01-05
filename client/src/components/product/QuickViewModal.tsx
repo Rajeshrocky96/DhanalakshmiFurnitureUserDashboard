@@ -115,7 +115,7 @@ const QuickViewModal = ({ product, onClose }: QuickViewModalProps) => {
 
                         {/* Product Info */}
                         <div className="flex flex-col">
-                            <h3 className="font-heading font-bold text-lg text-foreground">
+                            <h3 className="font-heading font-bold text-lg text-[#FA6202]">
                                 {product.name}
                             </h3>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+
 import { fetchBanners } from "@/services/api";
 import { Banner } from "@/types/api";
 import { useBannerNavigation } from "@/hooks/useBannerNavigation";

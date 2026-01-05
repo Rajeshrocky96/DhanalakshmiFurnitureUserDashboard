@@ -140,11 +140,11 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
           </div>
 
           {/* Content Section */}
-          <div className="flex-1 flex flex-col justify-between p-3 sm:p-6 bg-[#BDE8F5]/10">
+          <div className="flex-1 flex flex-col justify-between p-3 sm:p-6 bg-[#FFF5EA]/50">
             <div>
               <div className="flex justify-between items-start mb-2">
                 <Link to={`/product/${product.slug}`} className="group/title">
-                  <h3 className="font-heading font-bold text-lg sm:text-xl text-foreground group-hover/title:text-primary transition-colors mb-1">
+                  <h3 className="font-heading font-bold text-lg sm:text-xl text-[#FA6202] group-hover/title:text-primary transition-colors mb-1">
                     {product.name}
                   </h3>
                 </Link>
@@ -166,7 +166,7 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
 
               {/* Specs */}
               <div className="flex flex-wrap gap-2 mb-4 hidden sm:flex">
-                {Object.entries(product.specs || {}).slice(0, 3).map(([key, val], idx) => {
+                {Object.entries(product.specs || {}).slice(0, 3).map(([, val], idx) => {
                   const value = typeof val === 'object' && val !== null && 'value' in val ? (val as any).value : val;
                   return (
                     <span key={idx} className="text-xs bg-white px-2 py-1 rounded border border-gray-100 text-gray-600">
@@ -311,7 +311,7 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
           )}
         </Link>
 
-        <div className="bg-[#BDE8F5]">
+        <div className="bg-[#FFF5EA]">
           {/* Thumbnail Images & Stock Status */}
           <div className="flex items-center justify-between p-1.5 border-t border-border">
             <div className="flex gap-1">
@@ -340,7 +340,7 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
           {/* Product Info */}
           <div className="p-2 pt-0">
             <Link to={`/product/${product.slug}`} className="flex items-center justify-between gap-2 group/title">
-              <h3 className="font-heading font-semibold text-xs sm:text-sm text-foreground truncate group-hover/title:text-primary transition-colors" title={product.name}>
+              <h3 className="font-heading font-semibold text-xs sm:text-sm text-[#FA6202] truncate group-hover/title:text-primary transition-colors" title={product.name}>
                 {product.name}
               </h3>
               {/* Displaying first spec as short info if available */}

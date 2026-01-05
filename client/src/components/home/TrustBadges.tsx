@@ -1,4 +1,4 @@
-import { CreditCard, Smartphone, ShieldCheck, Percent } from "lucide-react";
+
 
 const TrustBadges = () => {
     return (
