@@ -252,13 +252,13 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           {/* Action Buttons - Bottom Center */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out z-10 flex gap-3">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-0 sm:translate-y-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-500 ease-out z-10 flex gap-3">
             <button
               onClick={handleQuickView}
-              className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-md border border-white/50 text-gray-700 flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-300 hover:scale-110 relative group/icon"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 backdrop-blur-md shadow-md border border-white/50 text-gray-700 flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-300 sm:hover:scale-110 relative group/icon"
             >
-              <Eye className="w-5 h-5 stroke-[1.5]" />
-              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] font-medium px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-200 translate-y-2 group-hover/icon:translate-y-0 whitespace-nowrap pointer-events-none shadow-lg">
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.5]" />
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] font-medium px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-200 translate-y-2 group-hover/icon:translate-y-0 whitespace-nowrap pointer-events-none shadow-lg hidden sm:block">
                 Quick View
                 <svg className="absolute text-black/90 h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255"><polygon className="fill-current" points="0,0 127.5,127.5 255,0" /></svg>
               </span>
@@ -266,13 +266,13 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
 
             <button
               onClick={handleCompare}
-              className={`w-10 h-10 rounded-full backdrop-blur-md shadow-md border border-white/50 flex items-center justify-center transition-all duration-300 hover:scale-110 relative group/icon ${isInCompare(product.productId)
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full backdrop-blur-md shadow-md border border-white/50 flex items-center justify-center transition-all duration-300 sm:hover:scale-110 relative group/icon ${isInCompare(product.productId)
                 ? 'bg-primary text-white border-primary'
                 : 'bg-white/90 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200'
                 }`}
             >
-              <GitCompare className="w-5 h-5 stroke-[1.5]" />
-              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] font-medium px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-200 translate-y-2 group-hover/icon:translate-y-0 whitespace-nowrap pointer-events-none shadow-lg">
+              <GitCompare className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.5]" />
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[10px] font-medium px-2 py-1 rounded-md opacity-0 group-hover/icon:opacity-100 transition-all duration-200 translate-y-2 group-hover/icon:translate-y-0 whitespace-nowrap pointer-events-none shadow-lg hidden sm:block">
                 Compare
                 <svg className="absolute text-black/90 h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255"><polygon className="fill-current" points="0,0 127.5,127.5 255,0" /></svg>
               </span>
@@ -295,7 +295,7 @@ const ProductCard = ({ product, showBadge = false, layout = 'grid' }: ProductCar
                   toast({ title: "Link copied", description: "Product link copied to clipboard" });
                 }
               }}
-              className="w-9 h-9 rounded-full bg-white/80 backdrop-blur-md shadow-sm border border-white/50 text-gray-700 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500 ease-out hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 hover:shadow-md"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/80 backdrop-blur-md shadow-sm border border-white/50 text-gray-700 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 translate-x-0 sm:translate-x-4 sm:group-hover:translate-x-0 transition-all duration-500 ease-out hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 hover:shadow-md"
               title="Share"
             >
               <Share2 className="w-4 h-4 stroke-[1.5]" />

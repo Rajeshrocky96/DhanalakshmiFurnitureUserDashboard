@@ -427,7 +427,7 @@ const CategoryPage = () => {
                 </div>
 
                 {/* Products */}
-                <motion.div layout className={`gap-3 sm:gap-6 pb-12 ${viewMode === 'grid' ? 'grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3' : 'flex flex-col space-y-4'}`}>
+                <motion.div layout className={`gap-2 sm:gap-6 pb-12 ${viewMode === 'grid' ? 'grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3' : 'flex flex-col space-y-4'}`}>
                   <AnimatePresence>
                     {filteredProducts.map((product, index) => (
                       <motion.div

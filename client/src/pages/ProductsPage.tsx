@@ -122,7 +122,7 @@ const ProductsPage = () => {
                         </div>
 
                         {loading ? (
-                            <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'}`}>
+                            <div className={`grid gap-2 sm:gap-6 ${viewMode === 'grid' ? 'grid-cols-2 sm:grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'}`}>
                                 {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                                     <div key={i} className={`bg-secondary animate-pulse rounded-lg ${viewMode === 'grid' ? 'aspect-[3/4]' : 'h-48'}`}></div>
                                 ))}
@@ -130,7 +130,7 @@ const ProductsPage = () => {
                         ) : (
                             <>
                                 {filteredProducts.length > 0 ? (
-                                    <div className={`gap-4 ${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : 'flex flex-col space-y-4'}`}>
+                                    <div className={`gap-2 sm:gap-4 ${viewMode === 'grid' ? 'grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4' : 'flex flex-col space-y-4'}`}>
                                         {filteredProducts.map((product, index) => (
                                             <motion.div
                                                 key={product.productId}

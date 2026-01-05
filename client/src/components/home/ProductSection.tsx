@@ -88,7 +88,7 @@ const ProductSection = ({ title, subtitle, products, viewAllLink, loading, showB
                         </button>
                     )}
 
-                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
                         {products.slice(startIndex, startIndex + 4).map((product, index) => (
                             <motion.div
                                 key={product.productId}

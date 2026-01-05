@@ -58,7 +58,7 @@ const CategoryCircles = () => {
         </div>
 
         {/* Section Circles (Tabs) */}
-        <div className="flex flex-nowrap overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-6 sm:gap-10 mb-8 py-4 sm:py-4 px-4 sm:px-0 no-scrollbar snap-x">
+        <div className="flex flex-nowrap overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-3 sm:gap-10 mb-6 py-2 sm:py-4 px-4 sm:px-0 no-scrollbar snap-x">
           {sections.map((section, index) => (
             <motion.div
               key={section.sectionId}
@@ -70,8 +70,8 @@ const CategoryCircles = () => {
                 onClick={() => setActiveSectionId(section.sectionId)}
                 className="flex flex-col items-center gap-3 group outline-none"
               >
-                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shadow-md border-2 transition-all duration-300 group-hover:shadow-xl ${activeSectionId === section.sectionId
-                  ? 'border-primary ring-4 ring-primary/20 scale-110'
+                <div className={`relative w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shadow-md border-2 transition-all duration-300 group-hover:shadow-xl ${activeSectionId === section.sectionId
+                  ? 'border-primary ring-2 sm:ring-4 ring-primary/20 scale-105 sm:scale-110'
                   : 'border-transparent bg-white group-hover:border-primary/50'
                   }`}>
                   {section.image ? (
@@ -92,7 +92,7 @@ const CategoryCircles = () => {
                   <div className={`absolute inset-0 transition-colors duration-300 ${activeSectionId === section.sectionId ? 'bg-transparent' : 'bg-black/10 group-hover:bg-transparent'
                     }`} />
                 </div>
-                <span className={`font-medium text-sm sm:text-base transition-colors text-center ${activeSectionId === section.sectionId ? 'text-primary font-bold' : 'text-gray-600 group-hover:text-primary'
+                <span className={`font-medium text-xs sm:text-base transition-colors text-center max-w-[80px] sm:max-w-none leading-tight ${activeSectionId === section.sectionId ? 'text-primary font-bold' : 'text-gray-600 group-hover:text-primary'
                   }`}>
                   {section.name}
                 </span>
@@ -111,7 +111,7 @@ const CategoryCircles = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6"
           >
             {activeCategories.map((category) => (
               <Link
@@ -137,12 +137,12 @@ const CategoryCircles = () => {
                   )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                 </div>
-                <div className="p-3 flex items-center justify-between gap-2 bg-[#FFF5E5]">
-                  <h3 className="font-bold text-primary transition-colors line-clamp-1 text-left text-sm sm:text-base">
+                <div className="p-2 sm:p-3 flex items-center justify-between gap-2 bg-[#FFF5E5]">
+                  <h3 className="font-bold text-primary transition-colors line-clamp-1 text-left text-xs sm:text-base">
                     {category.name}
                   </h3>
-                  <div className="flex items-center text-xs text-primary font-medium whitespace-nowrap">
-                    Explore <ArrowRight className="w-3 h-3 ml-1" />
+                  <div className="flex items-center text-[10px] sm:text-xs text-primary font-medium whitespace-nowrap">
+                    <span className="hidden sm:inline">Explore</span> <ArrowRight className="w-3 h-3 ml-0 sm:ml-1" />
                   </div>
                 </div>
               </Link>
